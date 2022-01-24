@@ -1,21 +1,21 @@
 import React, { useState } from "react";
-import Input from "../components/Registration/RegistrationForm";
+import Input from "../../common/Input";
 
-const Form: React.FC = () => {
+const RegistrationForm: React.FC = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [repeadPassword, setRepeadPassword] = useState("");
+  const [repeatPassword, setRepeatPassword] = useState("");
 
   const handler = () => {
-    if (password === repeadPassword) {
+    if (repeatPassword === password) {
       console.log({
         firstName,
         lastName,
         email,
         password,
-        repeadPassword,
+        repeatPassword,
       });
     } else {
       console.log("Пароли не совпадают");
@@ -27,11 +27,11 @@ const Form: React.FC = () => {
     setLastName("");
     setEmail("");
     setPassword("");
-    setRepeadPassword("");
+    setRepeatPassword("");
   };
   return (
     <div>
-      {/* <Input
+      <Input
         value={firstName}
         setValue={setFirstName}
         placeholder="Введите имя"
@@ -57,16 +57,16 @@ const Form: React.FC = () => {
         setValue={setPassword}
         placeholder="Введите пароль"
         type="password"
-        title="User Password"
+        title="User password"
       />
       <Input
-        value={repeadPassword}
-        setValue={setRepeadPassword}
+        value={repeatPassword}
+        setValue={setRepeatPassword}
         placeholder="Повторите пароль"
         type="password"
-        title="User repead Password"
-      /> */}
-      <button onClick={handler} type="button">
+        title="User repeat password"
+      />
+      <button onClick={handler} type="submit">
         PUSH ME
       </button>
       <button onClick={clearForm} type="button">
@@ -76,4 +76,4 @@ const Form: React.FC = () => {
   );
 };
 
-export default Form;
+export default RegistrationForm;

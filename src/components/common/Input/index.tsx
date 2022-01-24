@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 type InputPropsType = {
   value: string;
@@ -23,6 +23,7 @@ const Input: React.FC<InputPropsType> = (props) => {
         onChange={changeHandler}
         style={{ fontSize: "24px", marginBottom: "20px" }}
         value={value}
+        required={type === "password"}
       />
     </div>
   );
